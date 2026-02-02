@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface LogoProps {
@@ -46,7 +45,7 @@ export const Logo = ({ className = "", size = 32, showText = true, theme = 'dark
           <div className="flex items-center gap-1.5 mt-0.5">
             <span className="w-1 h-1 rounded-full bg-indigo-500 animate-pulse"></span>
             <span className="text-[7px] text-indigo-500/80 font-black uppercase tracking-[0.2em] antialiased leading-none">
-              V51.2.3 ALPHA
+              V52.0 ALPHA CENTER
             </span>
           </div>
         </div>

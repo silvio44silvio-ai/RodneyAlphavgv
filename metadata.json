@@ -1,13 +1,9 @@
 {
-  "name": "AgentPulse AI",
-  "version": "1.0.0",
-  "description": "Plataforma de Alta Performance para Corretores de Elite. Inteligência OSINT e Lead Scoring.",
   "requestFramePermissions": [
-    "geolocation",
     "camera",
-    "microphone"
+    "microphone",
+    "geolocation"
   ],
-  "short_name": "AgentPulse",
-  "theme_color": "#4f46e5",
-  "background_color": "#020617"
+  "name": "AgentPulse AI",
+  "description": ""
 }

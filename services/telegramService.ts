@@ -1,26 +1,29 @@
 
 import { Lead, UserProfile } from '../types';
 
+/**
+ * Rodney Alpha v55.0 - Telegram Alert System
+ * Envia notificações de leads quentes diretamente para o Telegram do Comandante.
+ */
 export const sendTelegramNotification = async (lead: Lead, profile: UserProfile) => {
   if (!profile.telegramBotToken || !profile.telegramChatId || !profile.enableTelegramAlerts) return;
 
   const message = `
-🚀 *NOVO LEAD IDENTIFICADO* 🚀
+🚀 *NOVO LEAD IDENTIFICADO - RADAR ALPHA* 🚀
 ━━━━━━━━━━━━━━━━━━
 👤 *Nome:* ${lead.name}
 📍 *Local:* ${lead.location}
 🔥 *Score:* ${lead.score}%
-🏢 *Tipo:* ${lead.type === 'buyer' ? 'Comprador' : 'Proprietário'}
+🏢 *Interesse:* ${lead.type === 'buyer' ? 'Compra' : 'Venda'}
 
-📝 *Necessidade:*
+📝 *Desejo:*
 "${lead.need}"
 
-🎯 *Triggers:*
+🎯 *Triggers de IA:*
 ${lead.triggers.map(t => `• ${t}`).join('\n')}
 
-📱 *Origem:* ${lead.foundAt}
 ━━━━━━━━━━━━━━━━━━
-_Enviado via AgentPulse Protocol_
+_Rodney Alpha Engine v55.0_
   `;
 
   try {
@@ -35,24 +38,7 @@ _Enviado via AgentPulse Protocol_
     });
     return response.ok;
   } catch (error) {
-    console.error('Erro ao enviar para Telegram:', error);
-    return false;
-  }
-};
-
-export const testTelegramConnection = async (token: string, chatId: string) => {
-  try {
-    const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: '✅ *AgentPulse AI:* Conexão estabelecida com sucesso! Protocolo Alpha Ativo.',
-        parse_mode: 'Markdown'
-      })
-    });
-    return response.ok;
-  } catch (error) {
+    console.error('Rodney Error: Falha no alerta Telegram.', error);
     return false;
   }
 };

@@ -1,12 +1,12 @@
 
 {
-  "name": "agent_pulse_ai",
+  "name": "agent-pulse-ai",
   "private": true,
-  "version": "51.2.3",
+  "version": "55.5.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -14,18 +14,16 @@
     "react-dom": "^19.0.0",
     "lucide-react": "^0.473.0",
     "recharts": "^2.15.0",
-    "@google/genai": "^1.38.0",
-    "clsx": "^2.1.1",
-    "tailwind-merge": "^2.5.2"
+    "@google/genai": "^1.39.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
     "vite": "^6.0.3",
+    "tailwindcss": "^3.4.16",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.16"
-  },
-  "engines": {
-    "node": ">=20"
+    "typescript": "^5.7.2",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
   }
 }
