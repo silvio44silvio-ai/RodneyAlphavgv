@@ -122,7 +122,7 @@ export const AdminPanel = () => {
                <div className="text-3xl font-black text-white">1.042</div>
             </div>
             <div className="p-6 bg-slate-950/50 rounded-3xl border border-white/5">
-               <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest">Conversão Trial -> Pro</span>
+               <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest">Conversão Trial -{'>'} Pro</span>
                <div className="text-3xl font-black text-emerald-400">14.2%</div>
             </div>
          </div>
